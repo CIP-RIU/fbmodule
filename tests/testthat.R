@@ -1,4 +1,4 @@
 library(testthat)
 library(fbmodule)
 
-test_check("fbmodule")
+test_check("fbmodule", reporter = "tap")

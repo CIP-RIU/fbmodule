@@ -6,4 +6,7 @@ Description: Helps assigning a list of data variables to a set.
 Depends: R (>= 3.2.2)
 License: GPL-3
 LazyData: true
-Suggests: testthat, fbglobal
+Suggests: testthat, fbglobal,
+  readxl, stringr,
+  shiny, shinydashboard, rhandsontable,
+  shinyBS, shinyFiles, fbcrops

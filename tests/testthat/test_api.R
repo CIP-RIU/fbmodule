@@ -11,7 +11,7 @@ test_that("Dummy table is retrieved.", {
   expect_true(is.null(get_module_table()), TRUE)
   get_tbl <- get_module_table("potato")
   expect_true(is.data.frame(get_tbl), TRUE)
-  expect_true(nrow(get_tbl) == 3, TRUE)
+  expect_true(nrow(get_tbl) >= 1, TRUE)
 })
 
 test_that("Dummy table is stored.", {
