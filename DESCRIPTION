@@ -3,10 +3,19 @@ Title: A named Set of Variables
 Version: 0.0.1
 Authors@R: person("Reinhard", "Simon", email = "r.simon@cgiar.org", role = c("aut", "cre"))
 Description: Helps assigning a list of data variables to a set.
-Depends: R (>= 3.2.2)
+Depends:
+    R (>= 3.2.2)
 License: GPL-3
 LazyData: true
-Suggests: testthat, fbglobal,
-  readxl, stringr,
-  shiny, shinydashboard, rhandsontable,
-  shinyBS, shinyFiles, fbcrops
+Suggests:
+    testthat,
+    fbglobal,
+    readxl,
+    stringr,
+    shiny,
+    shinydashboard,
+    rhandsontable,
+    shinyBS,
+    shinyFiles,
+    fbcrops
+RoxygenNote: 5.0.1

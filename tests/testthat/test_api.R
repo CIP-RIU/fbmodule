@@ -17,8 +17,8 @@ test_that("Dummy table is retrieved.", {
 test_that("Dummy table is stored.", {
   crop = "potato"
   get_tbl <- get_module_table(crop)
-  n = nrow(get_tbl)
-  vars = letters[1:n]
-  get_tbl[, "variables"] <- vars
+  # n = nrow(get_tbl)
+  # vars = letters[1:n]
+  # get_tbl[, "variable"] <- vars
   expect_true(post_module_table(get_tbl, crop), TRUE)
 })

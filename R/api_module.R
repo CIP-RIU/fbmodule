@@ -31,9 +31,9 @@ get_module_table <- function(crop = NULL){
   if (is.null(crop)) return(crop)
   fns <- fbglobal::fname_module(crop)
 
-  if(!file.exists(fns)) {
+  if (!file.exists(fns)) {
     base_dir <-  dirname(fns)
-    if(!dir.exists(base_dir)) dir.create(base_dir, recursive = TRUE)
+    if (!dir.exists(base_dir)) dir.create(base_dir, recursive = TRUE)
     table_module <- new_module_table(crop)
     saveRDS(table_module, file = fns)
   }
@@ -87,9 +87,23 @@ import_module_table <- function(file, crop){
     if (!is_module_table(tbl, crop)) return(NULL)
   }
   tbl[, 1] <- as.integer(tbl[, 1])
-  for(i in 2: 4) tbl[, i] <- as.character(tbl[, i])
+  for (i in 2:4) tbl[, i] <- as.character(tbl[, i])
 
-  x <- post_module_table(table_module = tbl, crop = crop)
+  post_module_table(table_module = tbl, crop = crop)
   tbl
 }
 
+#' List modules for a crop
+#'
+#' List modules for a crop
+#'
+#' @author Reinhard Simon
+#' @param crop character
+#' @return vector of module names
+#' @export
+list_modules <- function(crop){
+  tbl <- get_module_table(crop)
+  mdl <- tbl[tbl$crop == crop, c("module", "module_name")]
+  mdl <- paste0(mdl[,2], " (", mdl[, 1],")")
+  sort(unique(mdl))
+}

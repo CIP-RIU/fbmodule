@@ -6,7 +6,7 @@ library(fbmodule)
 library(shinyBS)
 library(shinyFiles)
 
-tabNameS <- "resource_modules"
+tabNameS <- "resource_module"
 
 
 server <- function(input, output, session) {
