@@ -15,7 +15,7 @@ server_module <- function(input, output, session, dom="hot_modules", values){
   #print(roots)
   shinyFiles::shinyFileChoose(input, 'module_files', session = session,
                               #roots=roots,
-                              roots = c(roots),
+                              roots = roots,
                               filetypes = c('xlsx', 'csv'))
 
   shiny::observeEvent(input$module_files, {
